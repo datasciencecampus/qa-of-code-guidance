@@ -17,7 +17,9 @@ This style is referred to as "Triple-A Testing".
 You can't be sure that your code works without having run it with realistic examples. Tests can verify that users' expectations are met by the code.
 They let you know when you've broken the expected functionality of your code - or when users have.
 They can be used to report or flag poor performance (e.g. modelling).
-Well-structured code is easier to write tests for, so testing incentivises good code structure.
+Well-structured code is easier to write tests for, so testing incentivises good code structure. 
+Testing forces you to consume your own code - if its difficult to use, it needs refactoring / redesigning.
+If you can't test it, it needs redesigning / refactoring, as if you can't check it works as expected, your intended customer should be nervous...
 
 Testing is crucial to assuring quality in your code and will also increase efficiency in the development of your code.
 
@@ -33,10 +35,11 @@ We can use general guides to direct where most of our testing effort goes.
 
 You should:
 * Focus on testing the most complex and vulnerable parts of your code (such as logic branches or mathematical formulae)
-* Write a new test every time you find a bug, to squash it for good
+* Write a new test every time you find a bug, to squash it for good (recreate the bug as a failing test - which will pass when fixed)
 * Focus on testing the most realistic use cases of your code
 * Test external interfaces - what happens if something unexpected is returned from one of your dependencies?
 * Document what your code should and shouldn't be used for, to steer users towards the corrected and tested usage
+* Consider cost of failure vs cost of testing the code
 
 You shouldn't:
 * Attempt to test every possible input and type of input
@@ -136,10 +139,10 @@ The time taken to develop and run individual tests roughly increases down this l
 
 [Acceptance testing](https://en.wikipedia.org/wiki/Acceptance_testing) is often considered as an additional level (namely, tests written from the customer's perspective), but is not covered here.
 
-Note that tests are often referred to as "unit tests" - but this is to remind us that each test should operate as a unit (as defined by Kent Beck in the seminal "Test Driven Development: By Example"):
-* tests should not impact any other tests
-* tests do not rely on other tests to run
-* tests should not leave any trace behind in the system (it is left "undamaged" - the test sweeps up after itself)
+> **Note** that tests are often referred to as "unit tests" - but this is to remind us that each test should operate as a unit (as defined by Kent Beck in the seminal "Test Driven Development: By Example"):
+> * tests should not impact any other tests
+> * tests do not rely on other tests to run
+> * tests should not leave any trace behind in the system (it is left "undamaged" - the test sweeps up after itself)
 
 The following sections will climb through these layers of testing.
 Please note that the principles covered early on also apply at subsequent levels.
@@ -168,7 +171,7 @@ Lots of content needed below
 You should follow the [Introduction to Unit Testing course](https://learninghub.ons.gov.uk/enrol/index.php?id=539) (GSS only) for applied examples in Python and R.
 The course also covers writing and documenting functions, and error handling.
 
-TODO thwe above courses refers to function tests as unit tests - assuming "unit" = "smallest unit", which is incorrect (that'd be atomic testing). Also it neglects to highlight TDD has 3 stages - write test, pass test, refactor - and refactor is 80% of the work... that's the software engineering part. TDD descriptions often accidently do this - see talks such as Ian Cooper - [TDD, Where Did It All Go Wrong](https://www.youtube.com/watch?v=EZ05e7EMOLM).
+> **TODO** the above courses refers to function tests as unit tests - assuming "unit" = "smallest unit", which is incorrect (that'd be atomic testing). Also it neglects to highlight TDD has 3 stages - write test, pass test, refactor - and refactor is 80% of the work... that's the software engineering part. TDD descriptions often accidently do this - see talks such as Ian Cooper - [TDD, Where Did It All Go Wrong](https://www.youtube.com/watch?v=EZ05e7EMOLM).
 
 Other resources include:
 * Hadley Wickham's [testthat: getting started with testing](https://vita.had.co.nz/papers/testthat.pdf)
@@ -195,10 +198,15 @@ These testing sections all need more content/examples.
 [#28](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/28)
 ```
 
+> **NOTE** when constructing a large system, these tests are very implementation specific. Ideally tests should be written at a higher level, closer to
+the users' requirements. In which case, when code is refactored, these high level tests will still pass without modification as the users' requirements are still met. Low level, implementation detail tests will break and need to be rewritten. This have been referrred to as "scaffolding tests" - used to help build up a more complex structure; once the structure is complete, they can be thrown away - with complex systems, the value is in testing that the users' requirements are met - such as end-to-end or integration tests.
+
 ## Integration testing <span role="image" aria-label="difficulty rating: 3 out of 5">★★★☆☆</span>
 
 Your analysis likely involves multiple units working together to perform a high level task.
 Assuring that individual units work as expected, using unit testing, does not guarantee that multiple units interact with one another as expected.
+
+> **NOTE** referring to earlier remark - all tests should be unit tests by definition; unit = operates in isolation without damaging other tests, the environment or requiring any tests to be run in advance...
 
 ```{figure} ./_static/no_integration_tests.png
 ---

@@ -83,6 +83,9 @@ In short, comments explaining **why** you made programming choices will help you
 
 Comments are sometimes used to divide long sections of code into sub-sections that relate to their overall functionality. That said, the merit of doing so will depend on the value added. For example, the code below is already fairly self-documenting and therefore adding the section headings does not add much value.
 
+`````{admonition} Comments describing what the code is doing, are they helpful?
+:class: warning
+
 ````{tabs}
 
 ```{code-tab} py
@@ -120,6 +123,8 @@ write.csv(species_means, "penguin_species_mean_measurements.csv")
 ```
 
 ````
+
+`````
 
 Leaving unused code in your scripts makes them more difficult to read and understand, as they add visual noise to anyone trying to understand your code at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is **highly discouraged**. Doing so reduces the reproducibility of your analysis.
 

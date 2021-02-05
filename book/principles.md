@@ -18,7 +18,7 @@ alt: Founding principles of good analysis.
 Founding principles of good analysis
 ```
 
-Reproducibility guarantees that we have done what we are claiming to have done, and that users could do it to get the same result.
+Reproducibility guarantees that we have done what we are claiming to have done, and that others can easily replicate our work.
 Auditability means that we know why we chose our analysis, and who is responsible for each part of it - including assurance.
 Assurance improves the average quality and includes the communication of that quality to users.
 
@@ -40,7 +40,7 @@ Each of these pieces of guidance advocate reproducibility as a core tenet of qua
 
 Reproducibility is the only thing that you can guarantee in your analysis.
 It is the first pillar of good analysis.
-If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding valuable analysis.
+If you can't prove that you can run the same analysis, with the same data, and obtain the same results then you are not adding a valuable analysis.
 The additional assurances of peer review, rigorous testing, and validity are secondary to being able to reproduce any analysis that you carry out in a proportionate amount of time.
 
 Reproducible analysis relies on a transparent production process, so that anyone can follow your steps and understand your results.
@@ -58,13 +58,12 @@ Wherever possible, we share the code we used to produce our outputs, along with 
 
 ## Auditable
 
-If decisions are made, based on your analysis, then you must make sure that the story of that analysis is available.
-Your analysis and the evidence that you provide must be available for scrutiny and audit.
+If decisions are made, based on your analysis, then you must make sure that your analysis and the evidence that you provide are available for scrutiny and audit.
 Auditable analysis is about being able to, at any point, answer: 
 
 * Who made each decision?
 * When was this decision made?
-* What evidence was this decision made on?
+* What evidence was this decision based on?
 
 Answering these questions gives decision makers and users greater trust in your work.
 They know the story of your analysis and why you made certain analytical choices.
@@ -105,7 +104,7 @@ Producing analysis, such as official statistics, can be time-consuming and pains
 We need to make sure that our outputs are both accurate and timely.
 We aim to develop effective and efficient analytical workflows that are repeatable and sustainable over time.
 These workflows should follow the principles of reproducible analysis. 
-We call these [Reproducible Analytical Pipelines (RAP)](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/).
+We call these [Reproducible Analytical Pipelines (RAP)](https://gss.civilservice.gov.uk/reproducible-analytical-pipelines/).
 
 Reproducible analysis is still not widely practised across government.
 Many analysts use proprietary (paid-for) analytical tools like SAS or SPSS in combination with programs like Excel, Word or Acrobat to create statistical products. 
@@ -117,47 +116,10 @@ Processes like this are also prone to error, because the input data and the outp
 
 More recently, the tools and techniques available to analysts have evolved. 
 Open-source tools like [Python](https://www.python.org/) and [R](https://www.r-project.org/) have become available.
-Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
-
-It is essential that we have access to appropriate and up-to-date tools for our analysis.
-In a recent case, use of legacy analytical tools lead to [under-reporting of COVID-19 statistics](https://www.bbc.co.uk/news/technology-54423988).
+Coupled with version control and software management platforms like [Git](https://git-scm.com/) and Git-services these tools have made it possible to develop automatic, streamlined processes, accompanied by a full audit trail.
 
 RAP was [first piloted in the Government Statistical Service in 2017](https://dataingovernment.blog.gov.uk/2017/03/27/reproducible-analytical-pipeline/) by analysts in the Department for Digital, Culture, Media & Sport (DCMS) and the Department for Education (DfE). 
 They collaborated with data scientists from the Government Digital Service (GDS) to automate the production of statistical bulletins.
 
 To support the adoption of RAP across government, there is a network of [RAP champions](https://gss.civilservice.gov.uk/about-us/champion-networks/reproducible-analytical-pipeline-rap-champions/). 
 RAP champions are responsible for promoting reproducible analysis through the use of reproducible analytical pipelines, and supporting others who want to develop RAP in their own departments.
-
-
-## Further development
-
-```{epigraph}
-Automation *is* documentation.
-
--- [Edwin Thoen (Agile Data Science with R)](https://edwinth.github.io/ADSwR/automation.html#automation-is-documentation)
-```
-
-The founding three principles above are reliant on a wider context.
-Analysis does not sit in a vacuum - it relies on a culture that values high quality analysis and supports it.
-In addition to reproducibility, auditability and quality assurance, we value adaptability and sustainability too.
-Adaptability guarantees that work done now will have value in the future.
-Sustainability guarantees that work done now will not diminish in quality or relevance over time.
-
-### Adaptable
-
-Analysis must be available to be reused or repurposed for other needs.
-
-Data sources change in shape or substance frequently.
-Analysis products should be able to adapt to those changes in the data source.
-
-```{todo}
-Complete the Adaptable principles.
-[#18](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/18)
-```
-
-### Sustainable
-
-```{todo}
-Write the sustainable principles.
-[#19](https://github.com/best-practice-and-impact/qa-of-code-guidance/issues/19)
-```

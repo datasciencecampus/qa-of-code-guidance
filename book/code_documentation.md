@@ -128,18 +128,29 @@ write.csv(species_means, "penguin_species_mean_measurements.csv")
 
 Leaving unused code in your scripts makes them more difficult to read and understand, as they add visual noise to anyone trying to understand your code at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is **highly discouraged**. Doing so reduces the reproducibility of your analysis.
 
+`````{admonition} Don't rely on commenting/uncommenting to change behaviour!
+:class: warning
+
 ````{tabs}
 
 ```{code-tab} py
 print("Run me!")
+data = load_some_data()
+
 # print("Don't run me...")
+# data = transform_data(data)
 ```
 ```{code-tab} r R
 print("Run me!")
+data <- load_some_data()
+
 # print("Don't run me...")
+# data <- transform_data(data)
 ```
 
 ````
+
+`````
 
 It is easy to forget which parts of code have been commented out and why they have been commented. It introduces a human factor into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code. This is likely to produce inconsistent runs of the same piece of code. This code might quickly become out of sync with the rest of the changes in the codebase, as developers may not consider updating code that is commented out if they assume it is obsolete.
 

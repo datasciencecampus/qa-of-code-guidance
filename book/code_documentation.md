@@ -22,6 +22,9 @@ Although extremely useful, comments should be used sparingly. Excessive use of c
 **Remember**: the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
 ```
 
+`````{admonition} Example of overzealous commenting, don't do this!
+:class: warning
+
 ````{tabs}
 
 ```{code-tab} py
@@ -47,6 +50,7 @@ total <- number_1 + number_2
 ```
 
 ````
+`````
 
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary. They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code. For a more detailed description of **what** the code does, the developer can also read more appropriate forms of documentation (see [docstrings](docstrings) below).
 
@@ -78,6 +82,9 @@ In short, comments explaining **why** you made programming choices will help you
 ```
 
 Comments are sometimes used to divide long sections of code into sub-sections that relate to their overall functionality. That said, the merit of doing so will depend on the value added. For example, the code below is already fairly self-documenting and therefore adding the section headings does not add much value.
+
+`````{admonition} Comments describing what the code is doing, are they helpful?
+:class: warning
 
 ````{tabs}
 
@@ -117,20 +124,33 @@ write.csv(species_means, "penguin_species_mean_measurements.csv")
 
 ````
 
+`````
+
 Leaving unused code in your scripts makes them more difficult to read and understand, as they add visual noise to anyone trying to understand your code at pace. Furthermore, relying on someone to comment and uncomment things to alter the functionality of the code is **highly discouraged**. Doing so reduces the reproducibility of your analysis.
+
+`````{admonition} Don't rely on commenting/uncommenting to change behaviour!
+:class: warning
 
 ````{tabs}
 
 ```{code-tab} py
 print("Run me!")
+data = load_some_data()
+
 # print("Don't run me...")
+# data = transform_data(data)
 ```
 ```{code-tab} r R
 print("Run me!")
+data <- load_some_data()
+
 # print("Don't run me...")
+# data <- transform_data(data)
 ```
 
 ````
+
+`````
 
 It is easy to forget which parts of code have been commented out and why they have been commented. It introduces a human factor into the equation, which might not be accounted for if someone in the future is not aware of the commented-out code. This is likely to produce inconsistent runs of the same piece of code. This code might quickly become out of sync with the rest of the changes in the codebase, as developers may not consider updating code that is commented out if they assume it is obsolete.
 

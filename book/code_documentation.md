@@ -22,6 +22,9 @@ Although extremely useful, comments should be used sparingly. Excessive use of c
 **Remember**: the only point of "truth" is the code that is executed - if the comments are out of date compared to the actual code, it may not be immediately apparent.
 ```
 
+`````{admonition} Example of overzealous commenting, don't do this!
+:class: warning
+
 ````{tabs}
 
 ```{code-tab} py
@@ -47,6 +50,7 @@ total <- number_1 + number_2
 ```
 
 ````
+`````
 
 Comments that describe exactly **what** is occurring in the code, as above, are often not necessary. They may be redundant, if [good naming practices](naming) are followed to self-document the steps that occur in your code. For a more detailed description of **what** the code does, the developer can also read more appropriate forms of documentation (see [docstrings](docstrings) below).
 
